@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controller</title>
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+   <body style="background-color:whiite;">
+    <div class="tabs-container">
+      <div class="tabs">
+	<p style="color:blue;font-size:46px;">
+	<i class="fas fa-home"></i></span>
+        <div class="tab active">Home</div>
+	<p style="color:blue;font-size:46px;">
+	<span class="icon"><i class="far fa-lightbulb"></i></span>
+        <div class="tab">Lights</div>
+	<p style="color:blue;font-size:46px;">
+ 	<span class="icon"><i class="fas fa-tv"></i></span>
+        <div class="tab">Display</div>
+	<p style="color:blue;font-size:46px;">
+	<span class="icon"><i class="fas fa-fan"></i></span>
+        <div class="tab">Fan</div>
+      </div>
+
+      <div class="content-container">
+        <div class="content active">
+          <h3></h3>
+          <p>
+          <button style="height:300px;width:300px;margin:50px;" onclick="javascript:mancaveon()" class="btn"><i class="fa fa-home"></i>ON</button>
+ 	  <button style="height:300px;width:300px;margin:50px;" onclick="javascript:mancaveon()" class="btn"><i class="fa fa-home"></i>OFF</button
+          <p>
+          </p>
+        </div>
+
+        <div class="content">
+          <h3></h3>
+          <p>
+             <p>
+          <button style="height:300px;width:300px;margin:50px;" onclick="javascript:led()" class="btn"><i class="fa fa-lightbulb">LED</i></button>
+	  <button style="height:300px;width:300px;margin:50px;" onclick="javascript:light()"class="btn"><i class="fa fa-lightbulb">LIGHT</i></button>
+            </p>
+          </p>
+          <p>
+          </p>
+        </div>
+
+        <div class="content">
+          <h3></h3>
+          <p>
+	<button style="height:300px;width:300px;margin:30px;" onclick="javascript:tv()"class="btn"><i class="fa fa-tv">TV</i></button>
+	<button style="height:300px;width:300px;margin:30px;" onclick="javascript:cable()"class="btn"><i class="fa fa-tv">CAB</i></button>
+	<button style="height:300px;width:300px;margin:30px;" onclick="javascript:video()"class="btn"><i class="fa fa-tv">VID</i></button>
+ 	
+          </p>
+          <p>
+
+          </p>
+        </div>
+
+        <div class="content">
+          <h3></h3>
+          <p>
+	<button style="height:300px;width:300px;margin:50px;" onclick="javascript:fan()"class="btn"><i class="fa fa-fan">fan</i></button>
+	<button style="height:300px;width:300px;margin:50px;" onclick="javascript:fanoff()"class="btn"><i class="fa fa-fan">fan off</i></button>
+	 </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function led() { //LED ON
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=led-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function tv() { //TV ON
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=tv-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fan() { //FAN
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function cable() { //CABLE
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=cable-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function video() { //VIDEO
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=tv-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function light() { //LIGHT
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=tree-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+ <script src="main.js"></script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fanoff() { //FAN OFF
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light-off"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function mancaveon() { //Man Cave ON
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=basement-on"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fanoff() { //FAN OFF
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light-off"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fanoff() { //FAN OFF
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light-off"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fanoff() { //FAN OFF
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light-off"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+<script>
+    function sleep(ms) { //wait function
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fanoff() { //FAN OFF
+        var ifrm = document.createElement("iframe"); //Creating iFrame
+        ifrm.setAttribute("src", "https://api-v2.voicemonkey.io/trigger?token=1550fb6a9e8c65276dc246a85f7e5ed3_8b74f6c44f9f8d173fe1cad863da2e0f&device=bar-light-off"); // Setting iFrame's source
+        ifrm.style.display = "none"; //Hiding iFrame
+        document.body.appendChild(ifrm); //Adding iFrame
+        await sleep(3000); //Giving the web page time to load
+        document.body.removeChild(ifrm); //Removing iFrame
+    }
+</script>
+  </body>
+</html>
